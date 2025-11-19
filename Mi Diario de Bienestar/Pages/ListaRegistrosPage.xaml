@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Mi_Diario_de_Bienestar.Pages.ListaRegistrosPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Lista de Registros"
+    BackgroundColor="#121212">
+
+    <CollectionView x:Name="ListaRegistros"
+                    Margin="10"
+                    SelectionMode="None">
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame Padding="10"
+                       Margin="5"
+                       BackgroundColor="#1F1F1F">
+                    <VerticalStackLayout Spacing="8">
+
+                        <Label Text="{Binding Fecha, StringFormat='Fecha: {0:dd/MM/yyyy}'}"
+                               TextColor="#FFA500"
+                               FontAttributes="Bold" />
+
+                        <Label Text="{Binding Descripcion}"
+                               TextColor="#FFFFFF"/>
+
+                        <Label Text="{Binding ActividadFisica, StringFormat='Actividad Física: {0}'}"
+                               TextColor="#FFFFFF"/>
+
+                        <Label Text="{Binding Energia, StringFormat='Energía: {0}'}"
+                               TextColor="#FFFFFF"/>
+
+                        <Button Text="Eliminar"
+                                BackgroundColor="#EF5350"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                HeightRequest="40"
+                                CommandParameter="{Binding Id}"
+                                Clicked="Eliminar_Clicked"/>
+
+                    </VerticalStackLayout>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+
+    </CollectionView>
+
+</ContentPage>

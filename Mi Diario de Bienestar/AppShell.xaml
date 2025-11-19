@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="Mi_Diario_de_Bienestar.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Mi_Diario_de_Bienestar.Pages">
+
+    <FlyoutItem Title="Inicio" >
+        <ShellContent ContentTemplate="{DataTemplate pages:MainPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Registro Diario" >
+        <ShellContent ContentTemplate="{DataTemplate pages:RegistroPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Estadísticas" >
+        <ShellContent ContentTemplate="{DataTemplate pages:EstadisticasPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Lista de Registros">
+        <ShellContent ContentTemplate="{DataTemplate pages:ListaRegistrosPage}" />
+    </FlyoutItem>
+
+</Shell>

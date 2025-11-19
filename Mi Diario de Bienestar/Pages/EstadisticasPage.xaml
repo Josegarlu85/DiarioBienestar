@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Mi_Diario_de_Bienestar.Pages.EstadisticasPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Estadísticas"
+    BackgroundColor="#121212">
+
+    <VerticalStackLayout Padding="20" Spacing="25">
+
+        <Label Text="Estadísticas Semanales"
+               FontSize="28"
+               TextColor="#FFA500"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <Frame Padding="15"
+               BackgroundColor="#1F1F1F">
+            <VerticalStackLayout Spacing="10">
+
+                <Label Text="Promedio Actividad Física:" TextColor="#FFA500"/>
+                <Label x:Name="LblActividad" FontAttributes="Bold" TextColor="#FFFFFF"/>
+
+                <Label Text="Promedio Energía:" TextColor="#FFA500"/>
+                <Label x:Name="LblEnergia" FontAttributes="Bold" TextColor="#FFFFFF"/>
+
+                <Label Text="Progreso General" TextColor="#FFA500"/>
+                <ProgressBar x:Name="BarraProgreso"
+                             Progress="0"
+                             BackgroundColor="#333333"
+                             ProgressColor="#FF4500"
+                             HeightRequest="10"/>
+
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+
+</ContentPage>

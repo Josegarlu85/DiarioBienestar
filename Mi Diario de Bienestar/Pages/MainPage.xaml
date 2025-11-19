@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Mi_Diario_de_Bienestar.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Inicio"
+    BackgroundColor="#121212">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <Label Text="Mi Diario de Bienestar"
+                   FontSize="28"
+                   TextColor="#FFA500"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Frame Padding="15"
+                   BackgroundColor="#1F1F1F">
+                <Label Text="Bienvenido a tu Diario de Bienestar. Aquí podrás registrar tu estado diario, ver estadísticas semanales y llevar control de tu actividad personal." 
+                       TextColor="#FFFFFF"
+                       FontSize="16"/>
+            </Frame>
+
+            <Label x:Name="LblSaludo"
+                   Text="Hola!"
+                   TextColor="#FFA500"
+                   FontAttributes="Bold"
+                   FontSize="20"/>
+
+            <Button Text="Jose"
+                    BackgroundColor="#FF4500"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="Button_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
