@@ -16,9 +16,9 @@ namespace Mi_Diario_de_Bienestar.Pages
             string nombre = Preferences.Get("NombreUsuario", string.Empty);
 
             if (string.IsNullOrWhiteSpace(nombre))
-                LblSaludo.Text = "¡Hola! 😊";
+                LblSaludo.Text = "¡Hola!";
             else
-                LblSaludo.Text = $"¡Hola, {nombre}! 🌿";
+                LblSaludo.Text = $"¡Hola, {nombre}! ";
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

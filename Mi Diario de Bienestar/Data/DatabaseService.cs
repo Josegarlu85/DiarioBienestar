@@ -158,46 +158,5 @@ namespace Mi_Diario_de_Bienestar.Data
 
             return null;
         }
-
-
-        /// Obtiene registros de los últimos N días
-        public async Task<List<RegistroDiario>> GetLastNDaysAsync(int dias)
-        {
-            var list = new List<RegistroDiario>();
-
-            await Task.Run(() =>
-            {
-                using var conn = new SqliteConnection($"Data Source={_dbPath}");
-                conn.Open();
-
-                string desde = DateTime.Today.AddDays(-(dias - 1)).ToString("yyyy-MM-dd");
-
-                using var cmd = conn.CreateCommand();
-                cmd.CommandText = @"
-                    SELECT Id, Fecha, Descripcion, ActividadFisica, Energia
-                    FROM Registros
-                    WHERE Fecha >= @desde
-                    ORDER BY Fecha DESC;";
-                cmd.Parameters.AddWithValue("@desde", desde);
-
-                using var reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    list.Add(new RegistroDiario
-                    {
-                        Id = reader.GetInt32(0),
-                        Fecha = DateTime.Parse(reader.GetString(1)),
-                        Descripcion = reader.GetString(2),
-                        ActividadFisica = reader.GetInt32(3),
-                        Energia = reader.GetInt32(4)
-                    });
-                }
-
-                conn.Close();
-            });
-
-            return list;
-        }
     }
 }
